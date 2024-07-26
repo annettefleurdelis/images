@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	<title></title>
+</head>
+
+<body>
+	<div id="dis4"></div>
+	<div id="dis0"></div>
+	<img src="https://annettefleurdelis.github.io/images/left.png" class="leftarrow" onclick="change('left');">
+	<img src="https://annettefleurdelis.github.io/images/right.png" class="rightarrow" onclick="change('right');">
+	<div class="col2" id="dis1">
+		<div class="column1">
+			<p class="title">Annette</p>
+			<p class="title2">Fleur de Lis</p>
+		</div>
+		<div class="column2">
+			<img src="https://annettefleurdelis.github.io/images/1.jpg" class="image">
+		</div>
+	</div>
+	<div class="col2" id="dis2">
+		<div class="column1">
+			<img id="test" src="https://annettefleurdelis.github.io/images/2.jpg" class="image">
+		</div>
+		<div class="column2">
+			<img src="https://annettefleurdelis.github.io/images/3.jpg" class="image">
+		</div>
+	</div>
+	<div class="col1" id="dis3">
+		<img src="https://annettefleurdelis.github.io/images/7.jpg" class="imagefull">
+	</div>
+</body>
+
+<style>
+p{
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+}
+body{
+	pading: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.column1{
+	width: 50%;
+}
+.column2{
+	width: 50%;
+}
+.col2{
+	display: flex;
+}
+.title{
+	text-align: right;
+	margin-top: 43%;
+	margin-right: 15px;
+	font-size: 70px;
+}
+.title2{
+	text-align: right;
+	margin-right: 15px;
+	font-size: 70px;
+}
+.image{
+	height: 100%;
+	width: 100%;
+}
+.leftarrow{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	width: 125px;
+	height: 125px;
+	margin-top: 17%;
+}
+.rightarrow{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+	width: 125px;
+	height: 125px;
+	margin-top: 17%;
+}
+.imagefull{
+	width: 100%;
+	height: 100%;
+}
+#dis1{
+	
+}
+#dis2{
+	display: none;
+}
+#dis3{
+	display: none;
+}
+</style>
+
+<script>
+const width = window.innerWidth;
+const height = window.innerHeight;
+var id = [1, 2, 3];
+var currID = 1;
+//let images = document.getElementsByClassName("image");
+console.log(`${height}px`);
+//document.getElementsByClassName("image").style.height = `${height}px`;
+//document.getElementById("test").style.height = `${height}px`;
+function change(dir){
+	//console.log(currID);
+	if (dir == "left"){
+		if(currID !== 1){
+			eval(`document.getElementById("dis${currID}").style.display = "none";`)
+			eval(`document.getElementById("dis${currID - 1}").style.display = "flex";`)
+			currID = currID - 1;
+		} else{
+			
+		}
+	}else if( dir == "right"){
+		if(currID !== 3){
+			eval(`document.getElementById("dis${currID}").style.display = "none";`)
+			eval(`document.getElementById("dis${currID + 1}").style.display = "flex";`)
+			currID = currID + 1;
+		}
+	}
+	//console.log(currID);
+}
+//~ var previous = array[(i+len-1)%len];
+//~ var next = array[(i+1)%len];
+</script>
+
+</html>
