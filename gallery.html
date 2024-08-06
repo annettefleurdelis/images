@@ -32,6 +32,9 @@
 	<div class="col1" id="dis3">
 		<img src="https://annettefleurdelis.github.io/images/7.jpg" class="imagefull">
 	</div>
+	<div class="col1" id="dis3">
+		<img src="https://annettefleurdelis.github.io/images/10.jpg" class="imagefull">
+	</div>
 </body>
 
 <style>
@@ -123,7 +126,7 @@ function change(dir){
 			
 		}
 	}else if( dir == "right"){
-		if(currID !== 3){
+		if(currID !== 4){
 			eval(`document.getElementById("dis${currID}").style.display = "none";`)
 			eval(`document.getElementById("dis${currID + 1}").style.display = "flex";`)
 			currID = currID + 1;
